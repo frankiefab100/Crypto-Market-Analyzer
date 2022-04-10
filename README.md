@@ -1,4 +1,4 @@
-# Cryptocurrency Price Tracker
+# Crypto Market Analyzer
 
 A web application for fetching information about any listed cryptocurrency in major crypto exchanges using `Coingecko` Public API.
 
@@ -13,13 +13,13 @@ A web application for fetching information about any listed cryptocurrency in ma
 Fork and Clone repository
 
 ```BASH
-git clone https://<YOUR-GITHUB-USERNAME>/Cryptocurrency-Price-Tracker
+git clone https://<YOUR-GITHUB-USERNAME>/Crypto-Market-Analyzer
 ```
 
 Change to the repository directory
 
 ```BASH
-cd Cryptocurrency-Price-Tracker
+cd Crypto-Market-Analyzer
 ```
 
 Install node modules
