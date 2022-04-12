@@ -10,6 +10,7 @@ const SearchCoin = (props) => {
             type="text"
             id="search-bar"
             placeholder="Enter a Crypto coin/token"
+            value={props.search}
             onChange={props.handleChange}
           />
         </form>
@@ -17,5 +18,22 @@ const SearchCoin = (props) => {
     </div>
   );
 };
+// const SearchCoin = (props) => {
+//   return (
+//     <div className="price-tracker">
+//       <div className="search">
+//         <h1>Cryptocurrency Market Analysis</h1>
+//         <form>
+//           <input
+//             type="text"
+//             id="search-bar"
+//             placeholder="Enter a Crypto coin/token"
+//             onChange={props.handleChange}
+//           />
+//         </form>
+//       </div>
+//     </div>
+//   );
+// };
 
 export default SearchCoin;

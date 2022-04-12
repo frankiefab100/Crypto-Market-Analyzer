@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Coinlist from "./components/CoinList";
+import CoinList from "./components/CoinList";
 import SearchCoin from "./components/SearchCoin";
 import "./index.css";
 
@@ -23,9 +23,8 @@ function App() {
     };
 
     fetchData();
-
-    return (e) => {
-      setSearch(e.target.value);
+    return () => {
+      setSearch(search);
     };
   }, [page]);
 
@@ -41,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <SearchCoin handleChange={getInputValue} />
-      <Coinlist coins={coins} search={search} />
+      <CoinList coins={coins} search={search} />
 
       <div className="button-container">
         <button className="loadmore-btn" onClick={loadMoreCoins}>

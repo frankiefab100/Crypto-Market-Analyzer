@@ -1,16 +1,12 @@
 import React from "react";
 import Coin from "./Coin";
 
-const Coinlist = ({ coins, search }) => {
-  const fetchCoins = coins.filter((coin) =>
-    coin.name.toLowerCase().includes(search.toLowerCase())
-  );
-
+const CoinList = ({ coins }) => {
   return (
     <div className="coin-list">
       <div className="result">
-        {fetchCoins.map((coin, index) => {
-          return (
+        {coins &&
+          coins.map((coin, index) => (
             <Coin
               number={index + 1}
               key={coin.id}
@@ -21,12 +17,12 @@ const Coinlist = ({ coins, search }) => {
               price={coin.current_price}
               priceChange={coin.price_change_percentage_24h}
               marketCap={coin.market_cap}
+              {...coins}
             />
-          );
-        })}
+          ))}
       </div>
     </div>
   );
 };
 
-export default Coinlist;
+export default CoinList;

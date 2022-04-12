@@ -14,7 +14,7 @@ const Coin = ({
     <div className="coin-container">
       <div className="row">
         <div className="coin">
-          <p className="rank-number">{number} </p>
+          <p className="rank-number">{number}</p>
           <img className="coin-image" src={image} alt="crypto" />
           <h2 className="coin-name">{name}</h2>
         </div>
