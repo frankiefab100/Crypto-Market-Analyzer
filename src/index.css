@@ -48,7 +48,7 @@ body {
 .row {
   border-bottom: 1px solid #ccc;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   width: 900px;
   height: 80px;
