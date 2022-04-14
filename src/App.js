@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CoinList from "./components/CoinList";
-import SearchCoin from "./components/SearchCoin";
+import SearchBar from "./components/SearchBar";
+import LoadMoreButton from "./components/LoadMoreButton";
 import "./index.css";
 
 function App() {
   const [coins, setCoins] = useState([]);
-  const [page, setPage] = useState(0);
-  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,30 +23,17 @@ function App() {
     };
 
     fetchData();
-    return () => {
-      setSearch(search);
-    };
   }, [page]);
 
-  const getInputValue = (e) => {
-    const inputValue = e.target.value;
-    setSearch(inputValue);
-  };
-
   const loadMoreCoins = () => {
-    setPage((page) => page + 1);
+    setPage(page + 1);
   };
 
   return (
     <div className="App">
-      <SearchCoin handleChange={getInputValue} />
-      <CoinList coins={coins} search={search} />
-
-      <div className="button-container">
-        <button className="loadmore-btn" onClick={loadMoreCoins}>
-          See More
-        </button>
-      </div>
+      <SearchBar />
+      <CoinList coins={coins} />
+      <LoadMoreButton handleClick={loadMoreCoins} />
     </div>
   );
 }
